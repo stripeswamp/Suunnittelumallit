@@ -38,13 +38,25 @@ class BlindBoard extends Game {
     
     void makePlay(int player)
     {
-        for(int r=0; r<3; r++)
-        {
             Scanner inputReader = new Scanner(System.in);
             System.out.print("Hit x-coordinate (0-7): ");
             int inputX = inputReader.nextInt();
+            
+            while(inputX < 0 || inputX > 7)
+            {
+                System.out.print("Over board! Hit x-coordinate (0-7): ");
+                inputX = inputReader.nextInt();
+            }
+            
             System.out.print("Hit y-coordinate (0-7): ");
             int inputY = inputReader.nextInt();
+            
+            while(inputY < 0 || inputY > 7)
+            {
+                System.out.print("Over board! Hit x-coordinate (0-7): ");
+                inputY = inputReader.nextInt();
+            }
+            
             System.out.println("Score: " + this.score);
             
             if(this.board[inputX][inputY] == 1)
@@ -52,13 +64,23 @@ class BlindBoard extends Game {
                 this.score++;
                 this.board[inputX][inputY] = 0;
             }
-        }
+
+            if(this.score == 3)
+            {
+                this.isitOver = true;
+            }
     }
     
     boolean endOfGame()
     {
-        //System.out.println("Joo");
-        return false;
+        if(this.isitOver == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     void printWinner()
