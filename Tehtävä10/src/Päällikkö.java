@@ -11,11 +11,11 @@
 class Päällikkö extends KorotusHandler{
     protected double haeSallittu()
     {
-        return PERUS;
+        return PERUS+5;
     }
     
     protected String haeRooli()
     {
-        return "päällikkö";
+        return "Päällikkö";
     }
 }

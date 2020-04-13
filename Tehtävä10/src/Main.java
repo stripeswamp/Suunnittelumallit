@@ -20,6 +20,10 @@ public class Main {
     public static void main(String[] args)
     {
       Esimies esimies = new Esimies();
+      Päällikkö päällikkö = new Päällikkö();
+      Toimitusjohtaja toimitusjohtaja = new Toimitusjohtaja();
+      esimies.asetaSeuraaja(päällikkö);
+      päällikkö.asetaSeuraaja(toimitusjohtaja);
       
         try {
             while (true) {

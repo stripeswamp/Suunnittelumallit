@@ -8,6 +8,14 @@
  *
  * @author Administrator
  */
-public class Toimitusjohtaja {
+public class Toimitusjohtaja extends KorotusHandler {
+     protected double haeSallittu()
+    {
+        return PERUS+100;
+    }
     
+    protected String haeRooli()
+    {
+        return "Toimitusjohtaja";
+    }
 }
