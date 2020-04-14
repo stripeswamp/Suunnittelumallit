@@ -22,7 +22,7 @@ abstract class KorotusHandler {
     
     public void käsitteleKorotus(KorotusPyyntö pyyntö)
     {
-        if(pyyntö.haeKorotus() < this.haeSallittu())
+        if(pyyntö.haeKorotus() <= this.haeSallittu())
         {
             System.out.println(this.haeRooli() + " hyväksyy " + pyyntö.haeKorotus() + "% korotuksen.");
         }

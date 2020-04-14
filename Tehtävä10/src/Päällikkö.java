@@ -11,7 +11,7 @@
 class Päällikkö extends KorotusHandler{
     protected double haeSallittu()
     {
-        return PERUS+5;
+        return PERUS+4.99;
     }
     
     protected String haeRooli()
