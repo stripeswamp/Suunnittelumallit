@@ -9,20 +9,25 @@
  * @author Administrator
  */
 public class Arvuuttaja {
-    private int arvaus;
     
-    public static class Memento
+    public Object liityPeliin()
+    {
+        int arpa = (int) Math.random()*10+1;
+        return new Memento(arpa);
+    }
+    
+    private static class Memento
     {
         private final int arvaus;
         
         public Memento(int setArvaus)
         {
-            this.arvaus = setArvaus; //this viittaa Memento-sisäluokan arvaus-muuttujaan
+            this.arvaus = setArvaus;
         }
-    }
-    
-    private int haeArvaus()
-    {
-        return this.arvaus;
+        
+        private int haeArvaus()
+        {
+            return this.arvaus;
+        }
     }
 }
