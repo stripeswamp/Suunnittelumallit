@@ -8,12 +8,21 @@
  *
  * @author Administrator
  */
-public class Arvuuttaja {
-    
+public class Arvuuttaja
+{
     public Object liityPeliin()
     {
         int arpa = (int) Math.random()*10+1;
         return new Memento(arpa);
+    }
+    
+    public boolean arvaus(Memento asiakas, int arvaus)
+    {
+        if(asiakas.haeArvaus() == arvaus)
+        {
+            return true;
+        }
+        return false;
     }
     
     private static class Memento
