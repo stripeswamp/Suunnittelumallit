@@ -12,12 +12,13 @@ public class Arvuuttaja
 {
     public Object liityPeliin()
     {
-        int arpa = (int) Math.random()*10+1;
+        int arpa = (int) Math.random()*100+1;
         return new Memento(arpa);
     }
     
-    public boolean arvaus(Memento asiakas, int arvaus)
+    public boolean arvaus(Object inputAsiakas, int arvaus)
     {
+        Memento asiakas = (Memento) inputAsiakas;
         if(asiakas.haeArvaus() == arvaus)
         {
             return true;

@@ -10,10 +10,16 @@
  */
 public class Talonmies
 {
-    private Object objekti;
+    Arvuuttaja arvuuttaja;
     
-    public void liityPeliin(Arvuuttaja r)
+    public Object liityPeliin(Arvuuttaja arvuuttaja)
     {
-        this.objekti = r.liityPeliin();
+        this.arvuuttaja = arvuuttaja;
+        return this.arvuuttaja.liityPeliin();
+    }
+    
+    public boolean arvaus(Object asiakas, int arvaus)
+    {
+        return this.arvuuttaja.arvaus(asiakas, arvaus);
     }
 }

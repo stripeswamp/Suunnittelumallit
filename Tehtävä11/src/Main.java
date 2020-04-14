@@ -15,6 +15,23 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Talonmies talonmies = new Talonmies();
+        
+        Arvuuttaja arvuuttaja = new Arvuuttaja();
+        
+        Runnable runnable1 = () -> {
+            Object o = talonmies.liityPeliin(arvuuttaja);
+            for (int i = 0; i <= 100; i++) {
+                if (talonmies.arvaus(o, i)) {
+                    System.out.println("Thread 1: " + i + ", oikein!");
+                    break;
+                } else {
+                    System.out.println("Thread 1: " + i + ", väärin.");
+                }
+            }
+        };
+        
+        Thread t1 = new Thread(runnable1);
+        t1.start();
     }
-    
 }
