@@ -25,8 +25,6 @@ public class Main extends Thread {
         thredi1.start();
         thredi2.start();
         thredi3.start();
-        
-        
     }
     
     public void run()

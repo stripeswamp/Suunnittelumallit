@@ -12,7 +12,7 @@ public class Arvuuttaja
 {
     public Object liityPeliin()
     {
-        int arpa = (int) Math.random()*10+1;
+        int arpa = (int) (Math.random()*10+1);
         return new Memento(arpa);
     }
     
@@ -28,11 +28,11 @@ public class Arvuuttaja
     
     private static class Memento
     {
-        private final int arvaus;
+        int arvaus;
         
-        public Memento(int setArvaus)
+        public Memento(int arvaus)
         {
-            this.arvaus = setArvaus;
+            this.arvaus = new Integer(arvaus);
         }
         
         private int haeArvaus()
