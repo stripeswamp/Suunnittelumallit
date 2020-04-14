@@ -8,30 +8,30 @@
  *
  * @author Administrator
  */
-public class Main {
+public class Main extends Thread {
 
+    Talonmies talonmies = new Talonmies();
+    Arvuuttaja arvuuttaja = new Arvuuttaja();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Talonmies talonmies = new Talonmies();
         
-        Arvuuttaja arvuuttaja = new Arvuuttaja();
+        Main thredi1 = new Main();
+        Main thredi2 = new Main();
+        Main thredi3 = new Main();
         
-        Runnable runnable1 = () -> {
-            Object o = talonmies.liityPeliin(arvuuttaja);
-            for (int i = 0; i <= 100; i++) {
-                if (talonmies.arvaus(o, i)) {
-                    System.out.println("Thread 1: " + i + ", oikein!");
-                    break;
-                } else {
-                    System.out.println("Thread 1: " + i + ", väärin.");
-                }
-            }
-        };
+        thredi1.start();
+        thredi1.start();
+        thredi1.start();
         
-        Thread t1 = new Thread(runnable1);
-        t1.start();
+        
+    }
+    
+    public void run()
+    {
+        Object asiakas = talonmies.liityPeliin(arvuuttaja);
+        
     }
 }
