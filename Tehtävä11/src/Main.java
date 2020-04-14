@@ -23,8 +23,8 @@ public class Main extends Thread {
         Main thredi3 = new Main();
         
         thredi1.start();
-        thredi1.start();
-        thredi1.start();
+        thredi2.start();
+        thredi3.start();
         
         
     }
@@ -32,6 +32,20 @@ public class Main extends Thread {
     public void run()
     {
         Object asiakas = talonmies.liityPeliin(arvuuttaja);
-        
+       
+        int c = 0;
+        while(c<10)
+        {
+            if(talonmies.arvaus(asiakas, c))
+            {
+                System.out.println(Thread.currentThread().getName() + ": " + c + ", jes!");
+                break;
+            }
+            else
+            {
+                 System.out.println(Thread.currentThread().getName() + ": " + c + ", ei onnea!");
+            }
+            c++;
+        }
     }
 }
