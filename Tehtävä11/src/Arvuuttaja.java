@@ -32,7 +32,7 @@ public class Arvuuttaja
         
         public Memento(int arvaus)
         {
-            this.arvaus = new Integer(arvaus);
+            this.arvaus = arvaus;
         }
         
         private int haeArvaus()
