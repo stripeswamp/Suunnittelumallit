@@ -1,4 +1,6 @@
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /*
@@ -13,32 +15,37 @@ import java.util.ArrayList;
  */
 
 
-public class Main {
+public class Main{
 
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-       // Image image1 = new ProxyImage("HiRes_10MB_Photo1");
-       // Image image2 = new ProxyImage("HiRes_10MB_Photo2");
 
         ArrayList<Image> images = new ArrayList<>();
         images.add(new ProxyImage("HiRes_10MB_Photo1"));
         images.add(new ProxyImage("HiRes_10MB_Photo2"));
         
-        for(Image i : images)
+        for(int c = 0; c < images.size(); c++)
         {
-            System.out.println(i.showData());
+            System.out.println(c+1 + ": " + images.get(c).showData());
         }
        
+        try
+        {
+            while (true)
+            {
+                System.out.print("> ");
+                int d = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
+                images.get(d-1).displayImage();
+           }
+        }
+        catch(Exception e)
+        {
+            System.exit(1);
+        }
         
-        /*image1.showData();
-        image1.displayImage(); // loading necessary
-        image1.displayImage(); // loading unnecessary
-        image2.displayImage(); // loading necessary
-        image2.displayImage(); // loading unnecessary
-        image1.displayImage(); // loading unnecessary
-        */
     }
     
 }
