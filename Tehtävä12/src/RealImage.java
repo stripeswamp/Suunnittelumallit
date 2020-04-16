@@ -27,4 +27,10 @@ public class RealImage implements Image {
     {
         System.out.println("Displaying " + this.filename);
     }
+    
+    @Override
+    public String showData()
+    {
+        return ("Filename " + this.filename);
+    }
 }

@@ -26,4 +26,10 @@ public class ProxyImage implements Image {
         }
         this.image.displayImage();
     }
+    
+    @Override
+    public String showData()
+    {
+        return ("Filename " + this.filename);
+    }
 }
