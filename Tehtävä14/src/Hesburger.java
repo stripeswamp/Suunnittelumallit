@@ -16,6 +16,7 @@ public class Hesburger extends Hambuilder {
     
     List<Object> hesBurger;
     GoudaJuusto gouda = new GoudaJuusto();
+    NaudanPihvi pihvi = new NaudanPihvi();
     
     @Override
     public void initiateBurger()
@@ -27,6 +28,7 @@ public class Hesburger extends Hambuilder {
     public void addToBurger()
     {
         this.hesBurger.add(this.gouda);
+        this.hesBurger.add(this.pihvi);
     }
     
     @Override
