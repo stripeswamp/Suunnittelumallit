@@ -8,6 +8,27 @@
  *
  * @author Administrator
  */
-public class McDonalds {
+public class McDonalds extends Hambuilder {
     
+    private StringBuilder McDonalds;
+    
+    @Override
+    public void initiateBurger()
+    {
+        this.McDonalds = new StringBuilder();
+    }
+    
+    @Override
+    public void addToBurger()
+    {
+        this.McDonalds.append("Emmental-juusto");
+        this.McDonalds.append("Kanapihvi");
+        this.McDonalds.append("Perussalaatti");
+    }
+    
+    @Override
+    public Object getBurger()
+    {
+        return this.McDonalds;
+    }
 }
