@@ -10,4 +10,21 @@
  */
 public class Sekunti {
     
+    int sekunti;
+    
+    public Sekunti(int sekunti)
+    {
+        this.sekunti = sekunti;
+    }
+    
+    public void asetaSekunti(int sekunti)
+    {
+        this.sekunti = sekunti;
+    }
+    
+    public int haeSekunti()
+    {
+        return this.sekunti;
+    }
+    
 }

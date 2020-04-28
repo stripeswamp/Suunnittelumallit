@@ -15,14 +15,24 @@ public class Main {
      */
     public static void main(String[] args) {
       
-        Kello kello1 = new Kello(1, 15);
+        Kello kello1 = new Kello(1, 15, 10);
         Kello kello2 = kello1.clone();   
      
-        System.out.println(kello1.haeTunti() + "." + kello1.haeMinuutti());
-        System.out.println(kello2.haeTunti() + "." + kello2.haeMinuutti());
+        System.out.println("Kello1: " + kello1.haeTunti() + "." + kello1.haeMinuutti() + "." + kello1.haeSekunti());
+        System.out.println("Kello2: " + kello2.haeTunti() + "." + kello2.haeMinuutti() + "." + kello2.haeSekunti());
         
-        new Thread((Runnable)kello1).start();
-        new Thread((Runnable)kello2).start();
+        System.out.println("----");
+        
+        Thread kelloThread1 = new Thread((Runnable)kello1);
+        kelloThread1.setName("Kello1");
+
+        Thread kelloThread2 = new Thread((Runnable)kello1);
+        kelloThread2.setName("Kello2");
+        
+        kelloThread1.start();
+        kelloThread2.start();
+       
+        
         
     }
     

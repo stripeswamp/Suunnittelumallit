@@ -15,11 +15,6 @@ public class Proto implements Cloneable {
       
     }
     
-    public void asetaMinuutti(int minuutti)
-    {
-        
-    }
-    
     public Object clone()
     {
         try
