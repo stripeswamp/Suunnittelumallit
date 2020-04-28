@@ -15,22 +15,15 @@ public class Main {
      */
     public static void main(String[] args) {
       
-        Student oppilas1 = new Student("Pekka", "matematiikka");
-        Student oppilas2 = oppilas1.clone();
-       
-        System.out.println(oppilas1.getName());
-        System.out.println(oppilas2.getName());
-        
-        System.out.println(oppilas1.getSubj().getName());
-        System.out.println(oppilas2.getSubj().getName());
-        
-        System.out.println("------");
-    
-     Kello kello1 = new Kello(1, 15);
-     Kello kello2 = kello1.clone();   
-
+        Kello kello1 = new Kello(1, 15);
+        Kello kello2 = kello1.clone();   
+     
         System.out.println(kello1.haeTunti() + "." + kello1.haeMinuutti());
         System.out.println(kello2.haeTunti() + "." + kello2.haeMinuutti());
+        
+        new Thread((Runnable)kello1).start();
+        new Thread((Runnable)kello2).start();
+        
     }
     
 }

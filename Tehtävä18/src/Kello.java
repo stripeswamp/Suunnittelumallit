@@ -10,19 +10,31 @@
  */
 public class Kello implements Cloneable, Runnable {
     
+    private Thread kelloThread = null;
     private Proto proto;
-    Tunti tunti;
-    Minuutti minuutti;
+    private Tunti tunti;
+    private Minuutti minuutti;
     
     public Kello(int tunti, int minuutti)
     {
+        this.proto = new Proto();
         this.tunti = new Tunti(tunti);
         this.minuutti = new Minuutti(minuutti);
     }
 
+    public void asetaTunti(int tunti)
+    {
+        this.tunti.asetaTunti(tunti);
+    }
+    
     public int haeTunti()
     {
         return this.tunti.haeTunti();
+    }
+    
+    public void asetaMinuutti(int minuutti)
+    {
+        this.minuutti.asetaMinuutti(minuutti);
     }
     
     public int haeMinuutti()
@@ -37,7 +49,7 @@ public class Kello implements Cloneable, Runnable {
         try
         {
             kello = (Kello) super.clone();
-            
+            kello.proto = (Proto) proto.clone();
         }
         catch (CloneNotSupportedException virhe)
         {
@@ -50,6 +62,7 @@ public class Kello implements Cloneable, Runnable {
     @Override
     public void run()
     {
-        
+         this.minuutti.asetaMinuutti(this.minuutti.haeMinuutti() + 1);
+         System.out.println(this.haeMinuutti());
     }
 }
