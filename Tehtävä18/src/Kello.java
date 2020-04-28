@@ -63,6 +63,6 @@ public class Kello implements Cloneable, Runnable {
     public void run()
     {
          this.minuutti.asetaMinuutti(this.minuutti.haeMinuutti() + 1);
-         System.out.println(this.haeMinuutti());
+         System.out.println(this.haeTunti() + ":" + this.haeMinuutti());
     }
 }
