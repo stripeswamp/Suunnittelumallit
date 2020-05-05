@@ -10,6 +10,7 @@ public class Verkkokortti implements Laiteosa {
         this.hinta = inputHinta;
     }
     
+    @Override
     public float getHinta()
     {
         return this.hinta;

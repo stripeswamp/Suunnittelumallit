@@ -11,6 +11,7 @@ public class Näytönohjain implements Laiteosa {
         this.hinta = inputHinta;
     }
     
+    @Override
     public float getHinta()
     {
         return this.hinta;

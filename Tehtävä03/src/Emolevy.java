@@ -18,6 +18,12 @@ public class Emolevy implements Laiteosa {
         this.laiteOsat = new ArrayList<>();
     }
     
+    public void lisääOsa(Laiteosa osa)
+    {
+        this.laiteOsat.add(osa);
+    }
+    
+    @Override
     public float getHinta()
     {
         for(Laiteosa osa : this.laiteOsat)
