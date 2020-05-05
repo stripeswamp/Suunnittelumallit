@@ -4,5 +4,4 @@
  */
 public interface Laiteosa {
     float getHinta();
-    
-}
+    }
