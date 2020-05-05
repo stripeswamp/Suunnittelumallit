@@ -2,10 +2,10 @@
  *
  * @author stripeswamp
  */
-public class Prosessori implements Laiteosa {
+public class Verkkokortti implements Laiteosa {
     private float hinta;
     
-    public Prosessori(float inputHinta)
+    public Verkkokortti(float inputHinta)
     {
         this.hinta = inputHinta;
     }

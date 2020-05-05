@@ -2,10 +2,11 @@
  *
  * @author stripeswamp
  */
-public class Prosessori implements Laiteosa {
+public class Näytönohjain implements Laiteosa {
+    
     private float hinta;
     
-    public Prosessori(float inputHinta)
+    public Näytönohjain(float inputHinta)
     {
         this.hinta = inputHinta;
     }
