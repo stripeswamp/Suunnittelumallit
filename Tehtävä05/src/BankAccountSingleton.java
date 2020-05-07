@@ -17,7 +17,6 @@ public class BankAccountSingleton {
         {
             BankAccountSingleton.INSTANCE = new BankAccountSingleton();
         }
-        
         return BankAccountSingleton.INSTANCE;
     }
     

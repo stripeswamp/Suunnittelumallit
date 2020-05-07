@@ -19,5 +19,4 @@ public class Main {
         account2.withdrawFunds(50);
         System.out.println(account2.getBalance());;
     }
-    
 }
