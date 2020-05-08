@@ -13,8 +13,6 @@ import java.util.Observable;
  */
 public class ClockTimer extends Observable implements Runnable {
     
-    
-    
     public int getHour()
     {
         return 0;
