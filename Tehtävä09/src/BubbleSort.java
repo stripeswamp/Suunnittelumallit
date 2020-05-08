@@ -1,3 +1,4 @@
+
 public class BubbleSort implements SortStrategy {
     
     @Override
@@ -15,6 +16,9 @@ public class BubbleSort implements SortStrategy {
                     swapNumbers(i, k, array);
                 }
             }
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ", ");
         }
     }
 
