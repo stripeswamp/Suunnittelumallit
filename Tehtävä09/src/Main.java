@@ -13,6 +13,11 @@ public class Main {
         
         context = new Context(new SelectionSort());
         context.executeStrategy(array);
+        
+        System.out.println("");
+        
+        context = new Context(new InsertionSort());
+        context.executeStrategy(array);
     }
     
 }
