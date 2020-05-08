@@ -1,41 +1,65 @@
-
 import java.util.Observable;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Administrator
- */
 public class ClockTimer extends Observable implements Runnable {
     
-    public int getHour()
+    private int tunti;
+    private int minuutti;
+    private int sekunti;
+    
+    public ClockTimer()
     {
-        return 0;
+        this.tunti = 0;
+        this.minuutti = 0;
+        this.sekunti = 0;
     }
     
-    public int getMinute()
+    public void asetaTunti(int input)
     {
-        return 0;
+        this.tunti = input;
     }
     
-    public int getSecond()
+    public void asetaminuutti(int input)
     {
-        return 0;
+        this.minuutti = input;
     }
     
-    void tick()
+    public void asetaSekunti(int input)
     {
-        
+        this.sekunti = input;
     }
     
-    @Override
+    public int haeTunti()
+    {
+        return this.tunti;
+    }
+    
+    public int haeMinuutti()
+    {
+        return this.minuutti;
+    }
+    
+    public int haeSekunti()
+    {
+        return this.sekunti;
+    }
+    
+     @Override
     public void run()
     {
-        
-    }
+         this.sekunti += 1;
+         
+         try
+         {
+             Thread.sleep(1000);
+         }
+         catch (InterruptedException poikkeus)
+         {
+             poikkeus.printStackTrace();
+         }
+         
+         setChanged();
+         notifyObservers(this.tunti + ":" + this.minuutti + ":" + this.sekunti);
+         System.out.println(Thread.currentThread().getName() + ": " + this.tunti + "." + this.minuutti + "." + this.sekunti);
+    };
+    
 }
