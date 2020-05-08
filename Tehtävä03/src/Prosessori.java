@@ -3,15 +3,15 @@
  * @author stripeswamp
  */
 public class Prosessori implements Laiteosa {
-    private float hinta;
+    private double hinta;
     
-    public Prosessori(float inputHinta)
+    public Prosessori(double inputHinta)
     {
         this.hinta = inputHinta;
     }
     
     @Override
-    public float getHinta()
+    public double getHinta()
     {
         return this.hinta;
     }

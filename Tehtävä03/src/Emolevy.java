@@ -24,7 +24,7 @@ public class Emolevy implements Laiteosa {
     }
     
     @Override
-    public float getHinta()
+    public double getHinta()
     {
         for(Laiteosa osa : this.laiteOsat)
         {

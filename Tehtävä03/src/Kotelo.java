@@ -13,10 +13,10 @@ import java.util.List;
  * @author stripeswamp
  */
 public class Kotelo implements Laiteosa {
-    private float hinta;
+    private double hinta;
     private List<Laiteosa> kotelonOsa;
     
-    public Kotelo(float inputHinta)
+    public Kotelo(double inputHinta)
     {
         this.hinta = inputHinta;
         this.kotelonOsa = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Kotelo implements Laiteosa {
     }
     
     @Override
-    public float getHinta()
+    public double getHinta()
     {
         for(Laiteosa osa : this.kotelonOsa)
         {

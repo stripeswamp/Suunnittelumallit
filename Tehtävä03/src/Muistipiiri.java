@@ -4,7 +4,7 @@
  */
 public class Muistipiiri implements Laiteosa {
     
-    private float hinta;
+    private double hinta;
     
     public Muistipiiri(float inputHinta)
     {
@@ -12,7 +12,7 @@ public class Muistipiiri implements Laiteosa {
     }
     
     @Override
-    public float getHinta()
+    public double getHinta()
     {
         return this.hinta;
     }

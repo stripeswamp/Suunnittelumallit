@@ -4,7 +4,7 @@
  */
 public class Näytönohjain implements Laiteosa {
     
-    private float hinta;
+    private double hinta;
     
     public Näytönohjain(float inputHinta)
     {
@@ -12,7 +12,7 @@ public class Näytönohjain implements Laiteosa {
     }
     
     @Override
-    public float getHinta()
+    public double getHinta()
     {
         return this.hinta;
     }

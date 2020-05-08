@@ -10,14 +10,14 @@
  */
 public class Virtalähde implements Laiteosa {
     
-    private float hinta;
+    private double hinta;
     
     public Virtalähde(float inputHinta)
     {
         this.hinta = inputHinta;
     }
     
-    public float getHinta()
+    public double getHinta()
     {
         return this.hinta;
     }
