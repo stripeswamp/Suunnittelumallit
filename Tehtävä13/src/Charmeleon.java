@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author stripeswamp
- */
 public class Charmeleon implements PokemonState {
+    
+    private java.util.Random random;
+    private int points;
+    private int bonus;
+    
+    public Charmeleon()
+    {
+        this.random = new java.util.Random();
+        this.points = 0;
+        this.bonus = random.nextInt(8 - 3) + 1;
+    }
     
     @Override
     public void kick()
@@ -37,24 +38,24 @@ public class Charmeleon implements PokemonState {
     @Override
     public void accept(Visitor visitor)
     {
-    
+        visitor.visit(this);
     }
    
     @Override
     public PokemonState nextState()
     {
-        return null;
+        return new Charizard();
     }
     
     @Override
-    public void setPoints(int points)
+    public void addPoints(int input)
     {
-        
+        this.points += input + bonus;
     }
     
     @Override
     public int getPoints()
     {
-        return 1;
+        return this.points;
     }
 }

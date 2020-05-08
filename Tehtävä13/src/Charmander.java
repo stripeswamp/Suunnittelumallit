@@ -1,18 +1,16 @@
-
-import java.util.Arrays;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author stripeswamp
- */
 public class Charmander implements PokemonState{
    
+    private java.util.Random random;
+    private int points;
+    private int bonus;
+    
+    public Charmander()
+    {
+        this.random = new java.util.Random();
+        this.points = 0;
+        this.bonus = random.nextInt(5 - 1) + 1;
+    }
+       
     @Override
     public void kick()
     {
@@ -40,24 +38,24 @@ public class Charmander implements PokemonState{
     @Override
     public void accept(Visitor visitor)
     {
-    
+        visitor.visit(this);
     }
    
     @Override
     public PokemonState nextState()
     {
-        return null;
+        return new Charmeleon();
     }
     
     @Override
-    public void setPoints(int points)
+    public void addPoints(int input)
     {
-        
+        this.points += input + bonus;
     }
     
     @Override
     public int getPoints()
     {
-        return 1;
+        return this.points;
     }
 }

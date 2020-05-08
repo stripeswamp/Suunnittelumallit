@@ -22,6 +22,17 @@ public class PokemonControl implements PokemonState {
         this.pokemon = state;
     }
     
+    public void accept(Visitor visitor)
+    {
+        this.pokemon.accept(visitor);
+    }
+    
+    @Override
+    public PokemonState nextState()
+    {
+        return this.pokemon.nextState();
+    }
+    
     @Override
     public void kick()
     {
@@ -47,27 +58,15 @@ public class PokemonControl implements PokemonState {
     }
     
     @Override
-    public void accept(Visitor visitor)
+    public void addPoints(int input)
     {
-    
-    }
-   
-    @Override
-    public PokemonState nextState()
-    {
-        return null;
-    }
-    
-    @Override
-    public void setPoints(int points)
-    {
-        
+        this.pokemon.addPoints(input);
     }
     
     @Override
     public int getPoints()
     {
-        return 1;
+        return pokemon.getPoints();
     }
     
     

@@ -9,5 +9,7 @@
  * @author stripeswamp
  */
 public interface Visitor {
-    
+    void visit(Charmander pokemonState);
+    void visit(Charmeleon pokemonState);
+    void visit(Charizard pokemonState);
 }

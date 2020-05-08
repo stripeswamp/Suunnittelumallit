@@ -9,13 +9,13 @@
  * @author stripeswamp
  */
 public interface PokemonState {
-   public void kick();
-   public void jump();
-   public void punch();
+   void kick();
+   void jump();
+   void punch();
    
    // Visitor-mallin laajennus Pokemonstateen
-   public void accept(Visitor visitor);
-   public PokemonState nextState();
-   public void setPoints(int points);
-   public int getPoints();
+   void accept(Visitor visitor);
+   PokemonState nextState();
+   void addPoints(int points);
+   int getPoints();
 }
